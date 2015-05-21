@@ -15,8 +15,8 @@ class Dataset(models.Model):
 
 class Attribute(models.Model):
     dataset = models.ForeignKey(Dataset, related_name='attributes')
-    name = models.TextField()
-    verbose_name = models.TextField()
+    name = models.CharField(max_length=20)
+    verbose_name = models.CharField(max_length=50)
     description = models.TextField()
     is_feature = models.BooleanField()
 
@@ -29,8 +29,8 @@ class Attribute(models.Model):
 
 class Label(models.Model):
     attribute = models.ForeignKey(Attribute, related_name='labels')
-    name = models.TextField()
-    verbose_name = models.TextField()
+    name = models.CharField(max_length=20)
+    verbose_name = models.CharField(max_length=50)
     description = models.TextField()
     code = models.PositiveIntegerField()
 
