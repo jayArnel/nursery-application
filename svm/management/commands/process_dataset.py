@@ -5,8 +5,8 @@ import cPickle as pickle
 from django.core.management.base import BaseCommand
 
 from sklearn import preprocessing
-from sklearn import utils
 from sklearn import svm
+from sklearn import utils
 
 class Command(BaseCommand):
     help = 'Preprocess the dataset by encoding and shuffling.'
