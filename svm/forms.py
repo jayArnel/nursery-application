@@ -2,47 +2,47 @@ from django import forms
 
 class ApplicationForm(forms.Form):
     PARENTS_CHOICES = (
-            ('Usual', 'usual'),
-            ('Pretentious', 'pretentious'),
-            ('Great Pretentious', 'great_pret'),
+            ('usual', 'Usual'),
+            ('pretentious', 'Ppretentious'),
+            ('great_pret', 'Great Pretentious'),
         )
     HAS_NURS_CHOICES = (
-            ('Proper', 'proper'),
-            ('Less Proper', 'less_proper'),
-            ('Improper', 'improper'),
-            ('Critical', 'critical'),
-            ('Very Critical', 'very_crit'),
+            ('proper', 'Proper'),
+            ('less_proper', 'Less Proper'),
+            ('improper', 'Improper'),
+            ('critical', 'Critical'),
+            ('very_crit','Very Critical')
         )
     FORM_CHOICES = (
-            ('Complete', 'complete'),
-            ('Completed', 'completed'),
-            ('Incomplete', 'incomplete'),
-            ('Foster', 'foster'),
+            ('complete', 'Complete'),
+            ('completed', 'Completed'),
+            ('incomplete', 'Incomplete'),
+            ('foster', 'Foster'),
         )
     CHILDREN_CHOICES = (
             ('1', '1'),
             ('2', '2'),
             ('3', '3'),
-            ('More', 'more')
+            ('more', 'More')
         )
     HOUSING_CHOICES = (
-            ('Convenient', 'convenient'),
-            ('Less Convenient', 'less_conv'),
-            ('Critical','critical')
+            ('convenient', 'Convenient'),
+            ('less_conv', 'Less Convenient'),
+            ('critical','Critical')
         )
     FINANCE_CHOICES = (
-            ('Convenient', 'convenient'),
-            ('Inconvenient', 'inconv'),
+            ('convenient', 'Convenient'),
+            ('inconv', 'Inconvenient'),
         )
     SOCIAL_CHOICES = (
-            ('Non-problematic', 'non-prob'),
-            ('Slightly problematic', 'slightly_prob'),
-            ('Problematic', 'problematic'),
+            ('nonprob', 'Non-problematic'),
+            ('slightly_prob', 'Slightly problematic'),
+            ('problematic', 'Problematic'),
         )
     HEALTH_CHOICES = (
-            ('Recommended', 'recommended'),
-            ('Priority', 'priority'),
-            ('Not Recommended', 'not_recom'),
+            ('recommended', 'Recommended'),
+            ('priority', 'Priority'),
+            ('not_recom', 'Not Recommended'),
         )
     parents = forms.ChoiceField(
         choices=PARENTS_CHOICES, widget=forms.RadioSelect,
