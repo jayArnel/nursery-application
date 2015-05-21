@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='nursery-application,
+    name='nursery-application',
     version='1.0',
     packages=find_packages(),
     license='BSD License',
