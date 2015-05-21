@@ -13,3 +13,6 @@ class IndexView(TemplateView):
         form = self.form_class(auto_id=False)
         print dir(form)
         return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        
