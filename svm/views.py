@@ -25,6 +25,7 @@ class QuestionnaireView(TemplateView):
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
+            name =(str(form.cleaned_data['name'])) 
             X = []
             X.append(str(form.cleaned_data['parents']))
             X.append(str(form.cleaned_data['has_nurs']))
@@ -41,8 +42,19 @@ class QuestionnaireView(TemplateView):
             print X
             prediction = svm.predict(X)
             label = encoders[-1].inverse_transform(prediction)
+            if label[0] == 'not_recom':
+                label = 'Not Recommended'
+            elif label[0] == 'spec_prior':
+                label = 'Special Priority'
+            elif label[0] == 'priority':
+                label = 'Priority'
+            elif label[0] == 'recommended':
+                label = 'Recommended'
+            if label[0] == 'very_recom':
+                label = 'Very Recommended'                
+
             return HttpResponse(
-                json.dumps({"prediction": label[0]}),
+                json.dumps({'name':name,"prediction": label}),
                 content_type="application/json"
             )
         else:

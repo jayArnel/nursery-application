@@ -27,7 +27,7 @@
       <div class="container">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+          <a class="navbar-brand page-scroll" href="{% url 'index' %}">Home</a>
           <ul class="nav navbar-nav navbar-right">
             <li class="hidden">
               <a href="#page-top"></a>
@@ -122,6 +122,12 @@
       </section>
     {% endblock %}
 
+      <!-- jQuery -->
+      
+      <script src= "{% static 'js/jquery-1.11.3.min.js' %}"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src=" {% static 'js/bootstrap.min.js' %}"></script>
     {% block page_javascript %} 
       <script src=" {% static 'js/classie.js' %}"></script>
       <script src=" {% static 'js/cbpAnimatedHeader.js' %}"></script>
@@ -129,11 +135,5 @@
       <!-- Custom Theme JavaScript -->
       <script src=" {% static 'js/agency.js' %}"></script>
     {% endblock %}
-      <!-- jQuery -->
-      
-      <script src= "{% static 'js/jquery.js' %}"></script>
-
-      <!-- Bootstrap Core JavaScript -->
-      <script src=" {% static 'js/bootstrap.min.js' %}"></script>
   </body>
 </html>
