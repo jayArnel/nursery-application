@@ -10,13 +10,14 @@
     {% load staticfiles %}
 
     <title>{%block page_title%}Online Nursery Assessment{%endblock%}</title>
-    {% block page_css %}{% endblock %}
+    {% block page_css %}
 
-    <!-- Bootstrap Core CSS -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <!-- Bootstrap Core CSS -->
+      <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+    {% endblock %}
 
   </head>
 
@@ -66,7 +67,7 @@
               <h3 class="section-subheading text-muted">
                   Online Nursery Application Assessment is a web-based application that
                   is set out to cater the processing needs of parents, prospective students
-                  and educational institutons for nursery applications focusing on reliability and convenience for all parties.
+                  and educational institutions for nursery applications focusing on reliability and convenience for all parties.
               </h3>
             </div>
           </div>
@@ -112,11 +113,6 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted">Magic!</p>
-            </div>
-          </div>
         </div>
 
       </section>
@@ -128,6 +124,7 @@
 
       <!-- Bootstrap Core JavaScript -->
       <script src=" {% static 'js/bootstrap.min.js' %}"></script>
+
     {% block page_javascript %} 
       <script src=" {% static 'js/classie.js' %}"></script>
       <script src=" {% static 'js/cbpAnimatedHeader.js' %}"></script>
@@ -135,5 +132,6 @@
       <!-- Custom Theme JavaScript -->
       <script src=" {% static 'js/agency.js' %}"></script>
     {% endblock %}
+
   </body>
 </html>
