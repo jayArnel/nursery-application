@@ -3,7 +3,7 @@ from django import forms
 class ApplicationForm(forms.Form):
     PARENTS_CHOICES = (
             ('usual', 'Usual'),
-            ('pretentious', 'Ppretentious'),
+            ('pretentious', 'Pretentious'),
             ('great_pret', 'Great Pretentious'),
         )
     HAS_NURS_CHOICES = (
