@@ -103,3 +103,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = './dev_storage/static'
+
+SVM_PATH = 'svm/pickles/svm.pickle'
+ENCODERS_PATH = 'svm/pickles/encoders.pickle'
+DATASET_PATH = 'svm/pickles/dataset.pickle'
