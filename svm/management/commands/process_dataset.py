@@ -3,6 +3,7 @@ import math
 import numpy as np
 import cPickle as pickle
 
+from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.core.management import call_command
 
@@ -17,7 +18,7 @@ class Command(BaseCommand):
     help = 'Preprocess the dataset by encoding and shuffling.'
 
     def handle(self, *args, **options):
-        if (os.path.isfile('svm/pickles/dataset.pickle')):
+        if (os.path.isfile(settings.DATASET_PATH)):
             self.stdout.write(
                 'A processed dataset is already present. Do you want to '
                 'overwrite existing dataset? (Y/N): ', ending='')
@@ -48,7 +49,7 @@ class Command(BaseCommand):
         self.stdout.write('Shuffling dataset...')
         dataset = utils.shuffle(encoded.T)
         self.stdout.write('Saving dataset and encoders...')
-        pickle.dump(dataset, open('svm/pickles/dataset.pickle', 'w'))
-        pickle.dump(encoders, open('svm/pickles/encoders.pickle', 'w'))
+        pickle.dump(dataset, open(settings.DATASET_PATH, 'w'))
+        pickle.dump(encoders, open(settings.ENCODERS_PATH, 'w'))
         self.stdout.write('dataset: \n%s' % dataset)
         self.stdout.write('Done.')
