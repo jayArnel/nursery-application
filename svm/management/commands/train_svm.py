@@ -22,8 +22,6 @@ class Command(BaseCommand):
         num_train = math.modf(num_train)[1]
         num_test = instances - num_train
         X = dataset[:,:-1]
-        self.stdout.write('Normalizing features...')
-        X = preprocessing.scale(X)
         Y = dataset[:,-1]
         X_train = X[:num_train]
         Y_train = Y[:num_train]
@@ -34,6 +32,7 @@ class Command(BaseCommand):
         maxScore = 0
         optC = 0
         optGamma = 0
+        optClf = svm.SVC()
         self.stdout.write('Tuning parameters...')
         for tempC in CSteps:
             for tempGamma in gammaSteps:
@@ -43,12 +42,12 @@ class Command(BaseCommand):
                 self.stdout.write("C: {0}, gamma: {1}, score: {2}".format(tempC, tempGamma, score))
                 if score > maxScore:
                     optC = tempC
+                    optClf = clf
                     optGamma = tempGamma
                     maxScore = score
         self.stdout.write("optimum:\n C: {0}, gamma: {1}, score: {2}".format(optC, optGamma, maxScore))
-        clf = svm.SVC(C=optC, gamma=optGamma)
         self.stdout.write('Saving SVM...')
-        pickle.dump(clf, open('svm/pickles/svm.pickle', 'w'))
+        pickle.dump(optClf, open('svm/pickles/svm.pickle', 'w'))
         self.stdout.write('Done.')
 
 
