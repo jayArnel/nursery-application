@@ -44,6 +44,7 @@ class ApplicationForm(forms.Form):
             ('priority', 'Priority'),
             ('not_recom', 'Not Recommended'),
         )
+    name = forms.CharField(max_length=50)
     parents = forms.ChoiceField(
         choices=PARENTS_CHOICES, widget=forms.RadioSelect,
         label='Parent\'s Occupation')
@@ -60,12 +61,12 @@ class ApplicationForm(forms.Form):
         choices=HOUSING_CHOICES, widget=forms.RadioSelect,
         label='Housing Conditions')
     finance = forms.ChoiceField(
-        choices=HAS_NURS_CHOICES, widget=forms.RadioSelect,
+        choices=FINANCE_CHOICES, widget=forms.RadioSelect,
         label='Financial Standing of the Family')
     social = forms.ChoiceField(
-        choices=HAS_NURS_CHOICES, widget=forms.RadioSelect,
+        choices=SOCIAL_CHOICES, widget=forms.RadioSelect,
         label='Social Conditions')
     health = forms.ChoiceField(
-        choices=HAS_NURS_CHOICES, widget=forms.RadioSelect,
+        choices=HEALTH_CHOICES, widget=forms.RadioSelect,
         label='Health Conditions')
 
