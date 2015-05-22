@@ -2,7 +2,7 @@ import json
 import cPickle as pickle
 
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 from django.http import HttpResponse
 
 from forms import ApplicationForm
@@ -10,8 +10,13 @@ from forms import ApplicationForm
 
 
 class IndexView(TemplateView):
-    form_class = ApplicationForm
+
     template_name = 'index.html'
+
+
+class QuestionnaireView(TemplateView):
+    form_class = ApplicationForm
+    template_name = 'questionnaire.html'
 
     def get(self, request):
         form = self.form_class(auto_id=False)
@@ -29,10 +34,10 @@ class IndexView(TemplateView):
             X.append(str(form.cleaned_data['finance']))
             X.append(str(form.cleaned_data['social']))
             X.append(str(form.cleaned_data['health']))
-            encoders = pickle.load(open('svm/pickles/encoders.pickle','r'))
+            encoders = pickle.load(open('svm/pickles/encoders.pickle', 'r'))
             for i in range(0, len(X)):
                 X[i] = encoders[i].transform([str(X[i])])[0]
-            svm = pickle.load(open('svm/pickles/svm.pickle','r'))
+            svm = pickle.load(open('svm/pickles/svm.pickle', 'r'))
             print X
             prediction = svm.predict(X)
             label = encoders[-1].inverse_transform(prediction)
