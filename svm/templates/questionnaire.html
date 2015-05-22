@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+    {% load staticfiles %}
+    {% block page_title %} Nursery Application Assessment Questionnaire {% endblock %}
+    <!-- Bootstrap core CSS -->
+    {% block page_css %}
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    {% endblock %}
+    {% block nav %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#about">About Us</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#team">Team</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    {% endblock %}
+    {% block body %}
+        <div class="container">
+          <!-- Main component for a primary marketing message or call to action -->
+          <div class="jumbotron">
+             <h1>Nursery Application Assessment Questionnaire</h1>
+            
+            <form action="" method="POST">
+              {% csrf_token %}
+              {% for field in form %}
+              <div class="form-group">
+              <label class="col-sm-2 control-label" for ='{{ field }}'>{{field.label}}</label>
+                <div class="col-sm-10 radio">
+                  {{field}}
+                </div>
+              </div>
+              {% endfor %}
+              <input type="submit" class="btn btn-primary" value="Submit" />
+            </form>
+          </div>
+
+        </div> <!-- /container -->
+    {% endblock %}
+
+    {% block page_javascript %} 
+        
+      <script src=" {% static 'js/classie.js' %}"></script>
+      <script src=" {% static 'js/cbpAnimatedHeader.js' %}"></script>
+    {% endblock %}
+  
