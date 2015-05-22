@@ -14,6 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         self.stdout.write('Retrieving and loading dataset...')
         data = open('nursery.dat', 'r')
+        
         dataset = np.loadtxt(fname=data, delimiter=',', dtype=str, ndmin=2)
         self.stdout.write('Encoding dataset values...')
         encoders = []
