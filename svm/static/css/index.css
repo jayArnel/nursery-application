@@ -2,8 +2,23 @@ li {
     list-style: none;
 }
 
+form {
+  margin: 40px 0 !important;
+}
+
+#labels_quest + .tooltip > .tooltip-inner {
+  background-color: #181818 ;
+  color: white;
+  max-width: 280px;
+  max-height: 100%;
+  font-size: 15px;
+}
+
 .jumbotron{
     margin-top: 100px;
+    height: 100%;
+    /*border: 1px solid red;*/
+    font-size: 12px;
 }
 
 .navbar {
@@ -32,6 +47,45 @@ li {
 .navbar-default .nav li a:focus {
     outline: 0;
     color: #fed136;
+}
+
+.radio {
+  text-align: left;
+}
+
+.help {
+
+}
+
+.radio-label {
+  width: 30%;
+  top: 10px;
+  text-align: left;
+  font-size: 12px;
+}
+
+#title_page {
+  text-align: center;
+}
+
+#con_label {
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  /*border: 1px solid red;*/
+  background-color: #F8F8F8;
+  border-radius: 5px;
+  padding-top: 5px;
+
+}
+
+#butt {
+  float: right;
+}
+
+#labels_quest {
+  font-size: 15px;
+  cursor: pointer;
 }
 
 @font-face {

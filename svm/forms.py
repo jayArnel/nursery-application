@@ -44,29 +44,27 @@ class ApplicationForm(forms.Form):
             ('priority', 'Priority'),
             ('not_recom', 'Not Recommended'),
         )
-    name = forms.CharField(max_length=50)
     parents = forms.ChoiceField(
-        choices=PARENTS_CHOICES, widget=forms.RadioSelect,
-        label='Parent\'s Occupation')
+        choices=PARENTS_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Parent\'s Occupation', help_text='PRETENTIOUS - irregular job; GREAT PRETENTIOUS - doesn\'t have a job; USUAL - has a regular job ')
     has_nurs = forms.ChoiceField(
-        choices=HAS_NURS_CHOICES, widget=forms.RadioSelect,
-        label='Child\'s Nursery')
+        choices=HAS_NURS_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Child\'s Nursery', help_text='CRITICAL - a nursery with disappointing comments from parents/children; VERY CRITICAL - a nursery with very disappointing reputation; LESS PROPER - nursery with less facilities; PROPER - nursery with complete facilites, good reputation, has license; IMPROPER - nursery doesn\'t have permanent staff, incomplete facilities')
     form = forms.ChoiceField(
-        choices=FORM_CHOICES, widget=forms.RadioSelect,
-        label='Form of the Family')
+        choices=FORM_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Form of the Family', help_text='INCOMPLETE - child was raised by either of his/her mother/father; FOSTER - child is adopted; COMPLETED - child\'s mother/father is deceased; COMPLETE - child has mother and father')
     children = forms.ChoiceField(
-        choices=CHILDREN_CHOICES, widget=forms.RadioSelect,
-        label='Number of Children')
+        choices=CHILDREN_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Number of Children', help_text='1 - only child; 2 - two children; 3 - three children; MORE - four or more children')
     housing = forms.ChoiceField(
-        choices=HOUSING_CHOICES, widget=forms.RadioSelect,
-        label='Housing Conditions')
+        choices=HOUSING_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Housing Conditions', help_text='CRITICAL - lives in a squatter area; LESS CRITICAL - house-and-lot is rented; CONVENIENT - house and lot is owned with expensive furnitures')
     finance = forms.ChoiceField(
-        choices=FINANCE_CHOICES, widget=forms.RadioSelect,
-        label='Financial Standing of the Family')
+        choices=FINANCE_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Financial Standing of the Family', help_text='INCONVENIENT - liabilities are greater than assets; CONVENIENT - assets are greater than liabilities')
     social = forms.ChoiceField(
-        choices=SOCIAL_CHOICES, widget=forms.RadioSelect,
-        label='Social Conditions')
+        choices=SOCIAL_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Social Conditions', help_text='PROBLEMATIC - doesn\'t have any friends; NON PROBLEMATIC - child has a lot of friends and was not bullied; SLIGHTLY PROBLEMATIC - child is moody, sometimes child doesn\'t  want to talk to other people')
     health = forms.ChoiceField(
-        choices=HEALTH_CHOICES, widget=forms.RadioSelect,
-        label='Health Conditions')
-
+        choices=HEALTH_CHOICES, widget=forms.RadioSelect(attrs={'class':'radio'}),
+        label='Health Conditions', help_text='PRIORITY - child\'s sickness must be monitored all the time; NOT RECOMMENDED - child is healthy; RECOMMENDED - child has mild sickness')
