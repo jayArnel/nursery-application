@@ -1,4 +1,6 @@
 # Nursery Application
+A nursery application assessment questionnaire that predicts the application status of a nursery applicant based on certain criteria, built using a Support Vector Machine.
+
 #### Install dependencies
 ##### Compilers for Scipy
 
