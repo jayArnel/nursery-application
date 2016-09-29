@@ -31,7 +31,7 @@ $ mkvirtualenv <env name>
 ####Clone the repository
 Clone
 ```
-$ git clone git@github.com:jayArnel/nursery-applicaiton.git
+$ git clone git@github.com:jayArnel/nursery-application.git
 ```
 Go to the project's root directory and setup the project
 ```
